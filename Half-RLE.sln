@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Half-RLE", "Half-RLE.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "interfaces\Interfaces.csproj", "{E5898AD9-B2D8-4607-B772-63FDB876F4DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HalfRLE_tests", "HalfRLE_tests\HalfRLE_tests.csproj", "{C481BB75-F381-43D8-A1C5-51A3E50DAF28}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E5898AD9-B2D8-4607-B772-63FDB876F4DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5898AD9-B2D8-4607-B772-63FDB876F4DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5898AD9-B2D8-4607-B772-63FDB876F4DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C481BB75-F381-43D8-A1C5-51A3E50DAF28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C481BB75-F381-43D8-A1C5-51A3E50DAF28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C481BB75-F381-43D8-A1C5-51A3E50DAF28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C481BB75-F381-43D8-A1C5-51A3E50DAF28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
