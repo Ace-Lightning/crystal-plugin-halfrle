@@ -46,7 +46,7 @@ namespace Half_RLE
 
         public HalfRLE(string _parameters)
         {
-            int offset = int.Parse(_parameters);
+            OffsetAmountLines = int.Parse(_parameters);
         }
 
         public List<byte> GetBytes(int _offset, string _pathToROM)
