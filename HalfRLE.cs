@@ -30,11 +30,11 @@ namespace Half_RLE
             throw new NotImplementedException();
         }
 
-        private int AmountLines { get; set; }
+        private int OffsetAmountLines { get; set; }
 
         public HalfRLE()
         {
-            Parameters = "Lines - the amount of lines";
+            Parameters = "Offset - the offset of amount of lines";
             Name = "Half-RLE Store Method";
             Description = "Store method like RLE but without compressing. You have byte of amount bytes and these bytes follow it.";
             Author = "Sergey Koryshev";
@@ -46,7 +46,7 @@ namespace Half_RLE
 
         public HalfRLE(string _parameters)
         {
-            AmountLines = int.Parse(_parameters);
+            int offset = int.Parse(_parameters);
         }
 
         public List<byte> GetBytes(int _offset, string _pathToROM)
@@ -55,11 +55,16 @@ namespace Half_RLE
 
             BinaryReader file = new BinaryReader(File.Open(_pathToROM, FileMode.Open));
 
-            file.BaseStream.Seek(_offset, SeekOrigin.Begin);
+            file.BaseStream.Seek(OffsetAmountLines, SeekOrigin.Begin);
+
+            byte amountLines = file.ReadByte();
 
             int i = 0;
             byte countBytes = 0;
-            while(i < AmountLines)
+
+            file.BaseStream.Seek(_offset, SeekOrigin.Begin);
+
+            while (i < amountLines)
             {
                 countBytes = file.ReadByte();
                 result.Add(countBytes);
@@ -81,10 +86,26 @@ namespace Half_RLE
 
             file.BaseStream.Seek(_offset, SeekOrigin.Begin);
 
-            foreach (byte currentByte in _sequence)
+            int i = 0;
+            byte count = 0;
+            byte currentByte = 0;
+            byte countLines = 0;
+            while(i < _sequence.Count)
             {
-                file.Write(currentByte);
+                count = _sequence[i];
+                countLines++;
+                file.Write(count);
+                i++;
+                for (int j = 0; j < count; j++)
+                {
+                    currentByte = _sequence[i+j];
+                }
+                i += count;
             }
+
+            file.BaseStream.Seek(OffsetAmountLines, SeekOrigin.Begin);
+
+            file.Write(countLines);
 
             file.Close();
         }
