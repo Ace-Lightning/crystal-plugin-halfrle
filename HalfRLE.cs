@@ -99,6 +99,7 @@ namespace Half_RLE
                 for (int j = 0; j < count; j++)
                 {
                     currentByte = _sequence[i+j];
+                    file.Write(currentByte);
                 }
                 i += count;
             }
