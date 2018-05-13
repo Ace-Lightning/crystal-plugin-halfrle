@@ -14,8 +14,8 @@ namespace HalfRLE_tests
         {
             int offsetText = 0x32EC1;
             int offsetCountLines = 0x30946;
-            string pathToROM = @"D:\Repositories\NewCrystal\crystal-plugin-halfrle\HalfRLE_tests\tests\GetBytes_rom";
-            string pathToResult = @"D:\Repositories\NewCrystal\crystal-plugin-halfrle\HalfRLE_tests\tests\GetBytes_result";
+            string pathToROM = @"D:\Repositories\Test\crystal-plugin-halfrle\HalfRLE_tests\tests\GetBytes_rom";
+            string pathToResult = @"D:\Repositories\Test\crystal-plugin-halfrle\HalfRLE_tests\tests\GetBytes_result";
             List<byte> expected = new List<byte>();
             using (BinaryReader file = new BinaryReader(File.Open(pathToResult, FileMode.Open)))
             {
@@ -36,8 +36,8 @@ namespace HalfRLE_tests
         {
             int offsetText = 0x32EC1;
             int offsetCountLines = 0x30946;
-            string pathToROM = @"D:\Repositories\NewCrystal\crystal-plugin-halfrle\HalfRLE_tests\tests\InsertBytes_rom";
-            string pathToSequence = @"D:\Repositories\NewCrystal\crystal-plugin-halfrle\HalfRLE_tests\tests\InsertBytes_sequence";
+            string pathToROM = @"D:\Repositories\Test\crystal-plugin-halfrle\HalfRLE_tests\tests\InsertBytes_rom";
+            string pathToSequence = @"D:\Repositories\Test\crystal-plugin-halfrle\HalfRLE_tests\tests\InsertBytes_sequence";
             List<byte> expectedSequence = new List<byte>();
             byte expectedCountLines = 0;
             byte countBytes = 0;
